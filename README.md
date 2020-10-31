@@ -1,1 +1,1 @@
-# Countries-codes-and-continents
+# Project to track corona cases in Kenya
