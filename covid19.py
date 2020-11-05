@@ -19,7 +19,7 @@ import calendar
 # In[2]:
 
 
-st.beta_set_page_config(page_title='Covid19 - Kenya',
+st.set_page_config(page_title='Covid19 - Kenya',
                         layout='wide', initial_sidebar_state='auto')
 
 
