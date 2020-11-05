@@ -328,12 +328,12 @@ with col5:
 
 col6, col7 = st.beta_columns(2)
 with col6:
-    st.markdown("<h2 style='text-align: center; color: green;'>Monthly positive cases by gender</h2>",
+    st.markdown("<h2 style='text-align: center; color: white;'>Monthly positive cases by gender</h2>",
                 unsafe_allow_html=True)
     fig = px.bar(gender, x ='month', y = ['Male','Female'], hover_data={'month': False, 'value':':,.0f'})
-    fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#E90', tickformat=',.0f',
+    fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#FFFFFF', tickformat=',.0f',
                                                 visible=True, showgrid=False),
-                      xaxis=dict(title='Month', titlefont=dict(size=18), color = '#E90', showline=True, showgrid=False),
+                      xaxis=dict(title='Month', titlefont=dict(size=18), color = '#FFFFFF', showline=True, showgrid=False),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16,
                                                                                                    bgcolor='white',
                                                                                                    font_family='Rockwell'),
@@ -351,31 +351,33 @@ with col7:
 
 col8, col9 = st.beta_columns(2)
 with col8:
-    st.markdown("<h2 style='text-align: center; color: green;'>Total cases, recoveries and fatalities</h2>",
+    st.markdown("<h2 style='text-align: center; color: white;'>Total cases, recoveries and fatalities</h2>",
                 unsafe_allow_html=True)
     fig = px.line(KE_monthly, x='month',y = ['Total cases','Total recoveries','Total deaths'],
                   hover_data={'value':':,.0f','month': False}, color_discrete_map={'Total cases': '#0000FF',
                                                                                    'Total recoveries': '#008000',
                                                                                    'Total deaths':'#8B0000'})
-    fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#E90', tickformat=',.0f',
+    fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#FFFFFF', tickformat=',.0f',
                                                         visible=True, showgrid=False),
-                      xaxis=dict(title='Month-2020', titlefont=dict(size=18), color = '#E90', showline=True, showgrid=False),
+                      xaxis=dict(title='Month-2020', titlefont=dict(size=18), color = '#FFFFFF', showline=False, showgrid=False),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16,
                                                                                                    bgcolor='white',
-                                                                                                   font_family='Rockwell'))
+                                                                                                   font_family='Rockwell'),
+                     legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(family="Courier", size=18, color='white')))
     fig.update_traces(hovertemplate=None)
     st.plotly_chart(fig)
     
 with col9:
-    st.markdown("<h2 style='text-align: center; color: green;'>Total cases by gender</h2>",
+    st.markdown("<h2 style='text-align: center; color: white;'>Total cases by gender</h2>",
                 unsafe_allow_html=True)
     fig = px.line(data3, x='month', y = ['Male','Female'], hover_data = {'month': False})
-    fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#E90', tickformat=',.0f',
+    fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#FFFFFF', tickformat=',.0f',
                                                         visible=True, showgrid=False),
-                      xaxis=dict(title='Month-2020', titlefont=dict(size=18), color = '#E90', showline=True, showgrid=False),
+                      xaxis=dict(title='Month-2020', titlefont=dict(size=18), color = '#FFFFFF', showline=False, showgrid=False),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16,
                                                                                                    bgcolor='white',
-                                                                                                   font_family='Rockwell'))
+                                                                                                   font_family='Rockwell')
+                     legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(family="Courier", size=18, color='white')))
     fig.update_traces(hovertemplate=None)
     st.plotly_chart(fig)
 
@@ -385,20 +387,21 @@ with col9:
 
 col10, col11 = st.beta_columns(2)
 with col10:
-    st.markdown("<h2 style='text-align: center; color: green;'>Positive cases per county over time</h2>",
+    st.markdown("<h2 style='text-align: center; color: white;'>Positive cases per county over time</h2>",
                 unsafe_allow_html=True)
     st.text('Showing top 10 counties only')
     fig = px.bar(data5, x='total_cases', y='County', orientation='h', hover_name= None, color='County', hover_data = {'month': False, 'period': data5['Month_yr']},
                  animation_frame='month', animation_group='County', range_x=[0,data5.total_cases.max()])
-    fig.layout.update(yaxis=dict(titlefont=dict(size=18),color = '#E90', showgrid=False),
-                      xaxis=dict(titlefont=dict(size=18), tickformat=',.0f', color = '#E90', showline=True, showgrid=False))
+    fig.layout.update(yaxis=dict(titlefont=dict(size=18),color = '#FFFFFF', showgrid=False),
+                      xaxis=dict(titlefont=dict(size=18), tickformat=',.0f', color = '#FFFFFF', showline=True, showgrid=False),
+                     legend=dict(font=dict(family="Courier", size=18, color='white')))
     fig.update_layout(yaxis={'categoryorder':'total descending'},  paper_bgcolor='rgba(0,0,0,0)',
                       plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16, bgcolor='white', font_family='Rockwell'))
     fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 2000
     st.plotly_chart(fig)
     
 with col11:
-    st.markdown("<h2 style='text-align: center; color: green;'>Positive cases over time - Africa</h2>",
+    st.markdown("<h2 style='text-align: center; color: white;'>Positive cases over time - Africa</h2>",
                 unsafe_allow_html=True)
 
     fig = px.choropleth(Africa_cases,locations='Country', locationmode='country names',
@@ -423,7 +426,7 @@ with col11:
 # In[19]:
 
 
-st.markdown("<h2 style='text-align: left; color: green;'>Worldwide positive cases over time</h2>",
+st.markdown("<h2 style='text-align: left; color: white;'>Worldwide positive cases over time</h2>",
             unsafe_allow_html=True)
 
 fig = px.choropleth(world_cases,locations='Country', locationmode='country names', color='Active cases',
