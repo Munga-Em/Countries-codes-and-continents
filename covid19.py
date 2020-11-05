@@ -48,11 +48,12 @@ cases_url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/cs
 recoveries_url ='https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv'
 deaths_url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv'
 ke_url = 'https://raw.githubusercontent.com/Munga-Em/Covid19-dashboard-Kenya/main/covid19KE.csv'
+codes_url = 'https://raw.githubusercontent.com/Munga-Em/Covid19-dashboard-Kenya/main/codes.csv'
 data        = pd.read_csv(ke_url)
 worldwide   = pd.read_csv(cases_url)
 recoveries  = pd.read_csv(recoveries_url)
 deaths      = pd.read_csv(deaths_url)
-codes       = pd.read_csv(r'C:\Users\hp\Desktop\codes.csv')
+codes       = pd.read_csv(codes_url)
 
 data_load_state.text('Loading data...done!')
 
