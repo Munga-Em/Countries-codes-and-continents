@@ -31,7 +31,7 @@ st.markdown("<h1 style='text-align: center; color: red;'>Covid19 Dashboard - Ken
 page_bg_img = '''
 <style>
 body {
-background-image: url('https://www.solidbackgrounds.com/images/950x350/950x350-mint-cream-solid-color-background.jpg');
+background-image: url('https://media.istockphoto.com/photos/monochrome-texture-with-white-and-gray-color-picture-id1138782666?k=6&m=1138782666&s=612x612&w=0&h=yxW7wRHOVZ5eA3aCnfNq3c5vorKgo2zmNuoIK0DFiao=');
 background-size: cover;
 }
 </style>
