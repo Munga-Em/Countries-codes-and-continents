@@ -270,7 +270,7 @@ with col2:
     fig.add_annotation(x=0.5, y=0.5, text=("{:.2%}".format(recoveryperc) + ' of total cases'), showarrow=False)
     fig.update_traces(textinfo='none', hoverinfo='skip')
     trace = dict(hoverinfo='skip')
-    fig.layout.update(showlegend=False, font=dict(size=18, color='green'), paper_bgcolor='rgba(0,0,0,0)',
+    fig.layout.update(showlegend=False, font=dict(size=18, color='white'), paper_bgcolor='rgba(0,0,0,0)',
                                                    plot_bgcolor='rgba(0,0,0,0)')
     st.plotly_chart(fig, config = config)   
     
@@ -281,7 +281,7 @@ with col3:
     fig.add_annotation(x=0.5, y=0.5, text=("{:.2%}".format(fatalityperc) + ' of total cases'), showarrow=False)
     fig.update_traces(textinfo='none')
     trace = dict(hoverinfo='skip')
-    fig.layout.update(showlegend=False, font=dict(size=18, color='green'), paper_bgcolor='rgba(0,0,0,0)',
+    fig.layout.update(showlegend=False, font=dict(size=18, color='white'), paper_bgcolor='rgba(0,0,0,0)',
                                                   plot_bgcolor='rgba(0,0,0,0)')
     st.plotly_chart(fig, config=config)
 
@@ -294,7 +294,7 @@ col4, col5 = st.beta_columns(2)
 with col4:
     st.markdown("<h2 style='text-align: center; color: white;'>Positivity rate</h2>", unsafe_allow_html=True)
     fig = px.line(data2, x='Date', y='rate',hover_data={'Date': False})
-    fig.layout.update(hovermode='x', yaxis=dict(title='Rate', titlefont=dict(size=18), color = '#E90', tickformat= ',.2%',
+    fig.layout.update(hovermode='x', yaxis=dict(title='Rate', titlefont=dict(size=18), color = '#FFFFFF', tickformat= ',.2%',
                                                 visible=True, showgrid=False),
                       xaxis=dict(title='Date', titlefont=dict(size=18), color = '#FFFFFF', showline=True, showgrid=False),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16,
@@ -304,19 +304,20 @@ with col4:
     st.plotly_chart(fig)
     
 with col5:
-    st.markdown("<h2 style='text-align: left; color: green;'>Daily confirmed cases, recoveries and fatalities</h2>",
+    st.markdown("<h2 style='text-align: left; color: white;'>Daily confirmed cases, recoveries and fatalities</h2>",
                 unsafe_allow_html=True)
     fig = px.line(KE_data, x='Date', y =['cases','recoveries','deaths'],
                   hover_data={'value':':,.0f','Date': False},
                   color_discrete_map={'cases': '#0000FF',
                                       'recoveries': '#008000',
                                       'deaths':'#8B0000'})
-    fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#E90', tickformat=',.0f',
+    fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#FFFFFF', tickformat=',.0f',
                                                         visible=True, showgrid=False),
-                      xaxis=dict(title='Date', titlefont=dict(size=18), color = '#E90', showline=True, showgrid=False),
+                      xaxis=dict(title='Date', titlefont=dict(size=18), color = '#FFFFFF', showline=True, showgrid=False),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16,
                                                                                                    bgcolor='white',
-                                                                                                   font_family='Rockwell'))
+                                                                                                   font_family='Rockwell'),
+                     legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(family="Courier", size=18, color='white', legend_title_text='')))
     fig.update_traces(hovertemplate=None)
     st.plotly_chart(fig)
 
