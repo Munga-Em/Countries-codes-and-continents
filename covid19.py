@@ -311,13 +311,14 @@ with col5:
                   color_discrete_map={'cases': '#0000FF',
                                       'recoveries': '#008000',
                                       'deaths':'#8B0000'})
-    fig.layout.update({legend_title_text: ''}, hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#FFFFFF', tickformat=',.0f',
+    fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#FFFFFF', tickformat=',.0f',
                                                         visible=True, showgrid=False),
                       xaxis=dict(title='Date', titlefont=dict(size=18), color = '#FFFFFF', showline=True, showgrid=False),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16,
                                                                                                    bgcolor='white',
                                                                                                    font_family='Rockwell'),
                      legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(family="Courier", size=18, color='white')))
+    fig.update_layout(legend_title_text='')
     fig.update_traces(hovertemplate=None)
     st.plotly_chart(fig)
 
