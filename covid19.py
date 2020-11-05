@@ -396,7 +396,7 @@ with col10:
                       xaxis=dict(titlefont=dict(size=18), tickformat=',.0f', color = '#FFFFFF', showline=True, showgrid=False),
                      legend=dict(font=dict(family="Courier", size=18, color='white')))
     fig.update_layout(yaxis={'categoryorder':'total descending'},  paper_bgcolor='rgba(0,0,0,0)',
-                      plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16, bgcolor='white', font_family='Rockwell'))
+                      plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=12, bgcolor='white', font_family='Rockwell'))
     fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 2000
     st.plotly_chart(fig)
     
