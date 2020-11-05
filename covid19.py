@@ -292,11 +292,11 @@ with col3:
 col4, col5 = st.beta_columns(2)
     
 with col4:
-    st.markdown("<h2 style='text-align: center; color: green;'>Positivity rate</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center; color: white;'>Positivity rate</h2>", unsafe_allow_html=True)
     fig = px.line(data2, x='Date', y='rate',hover_data={'Date': False})
     fig.layout.update(hovermode='x', yaxis=dict(title='Rate', titlefont=dict(size=18), color = '#E90', tickformat= ',.2%',
                                                 visible=True, showgrid=False),
-                      xaxis=dict(title='Date', titlefont=dict(size=18), color = '#E90', showline=True, showgrid=False),
+                      xaxis=dict(title='Date', titlefont=dict(size=18), color = '#FFFFFF', showline=True, showgrid=False),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16,
                                                                                                    bgcolor='white',
                                                                                                    font_family='Rockwell'))
@@ -334,7 +334,8 @@ with col6:
                       xaxis=dict(title='Month', titlefont=dict(size=18), color = '#E90', showline=True, showgrid=False),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16,
                                                                                                    bgcolor='white',
-                                                                                                   font_family='Rockwell'))
+                                                                                                   font_family='Rockwell'),
+                     legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(family="Courier", size=18, color='white')))
     fig.update_traces(hovertemplate=None)
     st.plotly_chart(fig)
     
@@ -352,7 +353,7 @@ with col8:
                 unsafe_allow_html=True)
     fig = px.line(KE_monthly, x='month',y = ['Total cases','Total recoveries','Total deaths'],
                   hover_data={'value':':,.0f','month': False}, color_discrete_map={'Total cases': '#0000FF',
-                                                                                   'Total recoveries': '#00FF00',
+                                                                                   'Total recoveries': '#008000',
                                                                                    'Total deaths':'#8B0000'})
     fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#E90', tickformat=',.0f',
                                                         visible=True, showgrid=False),
