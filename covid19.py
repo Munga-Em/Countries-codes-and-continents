@@ -311,9 +311,9 @@ with col5:
                   color_discrete_map={'cases': '#0000FF',
                                       'recoveries': '#008000',
                                       'deaths':'#8B0000'})
-    fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), tickformat=',.0f',
+    fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#E90', tickformat=',.0f',
                                                         visible=True, showgrid=False),
-                      xaxis=dict(title='Date', titlefont=dict(size=18), showline=True, showgrid=False),
+                      xaxis=dict(title='Date', titlefont=dict(size=18), color = '#E90', showline=True, showgrid=False),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16,
                                                                                                    bgcolor='white',
                                                                                                    font_family='Rockwell'))
@@ -329,9 +329,9 @@ with col6:
     st.markdown("<h2 style='text-align: center; color: green;'>Monthly positive cases by gender</h2>",
                 unsafe_allow_html=True)
     fig = px.bar(gender, x ='month', y = ['Male','Female'], hover_data={'month': False, 'value':':,.0f'})
-    fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), tickformat=',.0f',
+    fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#E90', tickformat=',.0f',
                                                 visible=True, showgrid=False),
-                      xaxis=dict(title='Month', titlefont=dict(size=18), showline=True, showgrid=False),
+                      xaxis=dict(title='Month', titlefont=dict(size=18), color = '#E90', showline=True, showgrid=False),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16,
                                                                                                    bgcolor='white',
                                                                                                    font_family='Rockwell'))
@@ -354,9 +354,9 @@ with col8:
                   hover_data={'value':':,.0f','month': False}, color_discrete_map={'Total cases': '#0000FF',
                                                                                    'Total recoveries': '#00FF00',
                                                                                    'Total deaths':'#8B0000'})
-    fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), tickformat=',.0f',
+    fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#E90', tickformat=',.0f',
                                                         visible=True, showgrid=False),
-                      xaxis=dict(title='Month-2020', titlefont=dict(size=18), showline=True, showgrid=False),
+                      xaxis=dict(title='Month-2020', titlefont=dict(size=18), color = '#E90', showline=True, showgrid=False),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16,
                                                                                                    bgcolor='white',
                                                                                                    font_family='Rockwell'))
@@ -367,9 +367,9 @@ with col9:
     st.markdown("<h2 style='text-align: center; color: green;'>Total cases by gender</h2>",
                 unsafe_allow_html=True)
     fig = px.line(data3, x='month', y = ['Male','Female'], hover_data = {'month': False})
-    fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), tickformat=',.0f',
+    fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#E90', tickformat=',.0f',
                                                         visible=True, showgrid=False),
-                      xaxis=dict(title='Month-2020', titlefont=dict(size=18), showline=True, showgrid=False),
+                      xaxis=dict(title='Month-2020', titlefont=dict(size=18), color = '#E90', showline=True, showgrid=False),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16,
                                                                                                    bgcolor='white',
                                                                                                    font_family='Rockwell'))
@@ -387,8 +387,8 @@ with col10:
     st.text('Showing top 10 counties only')
     fig = px.bar(data5, x='total_cases', y='County', orientation='h', hover_name= None, color='County', hover_data = {'month': False, 'period': data5['Month_yr']},
                  animation_frame='month', animation_group='County', range_x=[0,data5.total_cases.max()])
-    fig.layout.update(yaxis=dict(titlefont=dict(size=18), showgrid=False),
-                      xaxis=dict(titlefont=dict(size=18), tickformat=',.0f', showline=True, showgrid=False))
+    fig.layout.update(yaxis=dict(titlefont=dict(size=18),color = '#E90', showgrid=False),
+                      xaxis=dict(titlefont=dict(size=18), tickformat=',.0f', color = '#E90', showline=True, showgrid=False))
     fig.update_layout(yaxis={'categoryorder':'total descending'},  paper_bgcolor='rgba(0,0,0,0)',
                       plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16, bgcolor='white', font_family='Rockwell'))
     fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 2000
@@ -407,8 +407,8 @@ with col11:
                         scope='africa', center=None, width=900, height=600)
     fig.update_geos(showcoastlines=True, coastlinecolor="RebeccaPurple", showcountries = True,
                     showland=True,showocean=True, oceancolor="LightBlue", showlakes=True, lakecolor="Blue")
-    fig.layout.update(yaxis=dict(titlefont=dict(size=18), showgrid=False),
-                      xaxis=dict(titlefont=dict(size=18), showgrid=False))
+    fig.layout.update(yaxis=dict(titlefont=dict(size=18), color = '#E90', showgrid=False),
+                      xaxis=dict(titlefont=dict(size=18), color = '#E90', showgrid=False))
     fig.update_layout(hovermode='x unified', height=800, width =1000, coloraxis_colorbar_x=-0,
                       paper_bgcolor='rgba(0,0,0,0)',
                       plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16, bgcolor='white', font_family='Rockwell'))
@@ -433,8 +433,8 @@ fig = px.choropleth(world_cases,locations='Country', locationmode='country names
                     center=None, width=900, height=600)
 fig.update_geos(showcoastlines=True, coastlinecolor="RebeccaPurple", showcountries = True,
                 showland=True,showocean=True, oceancolor="LightBlue", showlakes=True, lakecolor="Blue")
-fig.layout.update(yaxis=dict(titlefont=dict(size=18), showgrid=False),
-                  xaxis=dict(titlefont=dict(size=18), showgrid=False))
+fig.layout.update(yaxis=dict(titlefont=dict(size=18), color = '#E90', showgrid=False),
+                  xaxis=dict(titlefont=dict(size=18), color = '#E90', showgrid=False))
 fig.update_layout(height=600, width =900, coloraxis_colorbar_x=-0.15, paper_bgcolor='rgba(0,0,0,0)',
                   plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16, bgcolor='white', font_family='Rockwell'))
 fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
