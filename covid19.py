@@ -401,7 +401,7 @@ with col10:
     st.plotly_chart(fig)
     
 with col11:
-    st.markdown("<h2 style='text-align: center; color: white;'>Positive cases over time - Africa</h2>",
+    st.markdown("<h2 style='text-align: center; color: white;'>Active cases over time - Africa</h2>",
                 unsafe_allow_html=True)
 
     fig = px.choropleth(Africa_cases,locations='Country', locationmode='country names',
@@ -426,7 +426,7 @@ with col11:
 # In[19]:
 
 
-st.markdown("<h2 style='text-align: left; color: white;'>Worldwide positive cases over time</h2>",
+st.markdown("<h2 style='text-align: left; color: white;'>Worldwide active cases over time</h2>",
             unsafe_allow_html=True)
 
 fig = px.choropleth(world_cases,locations='Country', locationmode='country names', color='Active cases',
