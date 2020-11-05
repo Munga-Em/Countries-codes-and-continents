@@ -229,7 +229,7 @@ data5 = data5.rename(columns={0: "new cases"}).reset_index()
 data5['month'] = data5['Date'].dt.month
 data5['Month_yr'] = data5['Date'].dt.strftime('%b-%Y')
 data5 = data5.drop(['Date'], axis=1)
-data5 = data5.groupby(['month','County'], as_index=False)['new cases'].sum()
+data5 = data5.groupby(['month','County', 'Month_yr'], as_index=False)['new cases'].sum()
 data5['total_cases'] = data5.groupby('County')['new cases'].transform('cumsum')
 data5 = data5.sort_values(by=['month', 'total_cases'], ascending=[True, False]).groupby('month').head(10)
 
@@ -385,7 +385,7 @@ with col10:
     st.markdown("<h2 style='text-align: center; color: green;'>Positive cases per county over time</h2>",
                 unsafe_allow_html=True)
     st.text('Showing top 10 counties only')
-    fig = px.bar(data5, x='total_cases', y='County', orientation='h', hover_name= None, color='County',
+    fig = px.bar(data5, x='total_cases', y='County', orientation='h', hover_name= None, color='County', hover_data = {'month': False, 'period': data5['Month_yr']},
                  animation_frame='month', animation_group='County', range_x=[0,data5.total_cases.max()])
     fig.layout.update(yaxis=dict(titlefont=dict(size=18), showgrid=False),
                       xaxis=dict(titlefont=dict(size=18), tickformat=',.0f', showline=True, showgrid=False))
