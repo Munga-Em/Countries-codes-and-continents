@@ -26,7 +26,7 @@ st.set_page_config(page_title='Covid19 - Kenya',
 # In[3]:
 
 
-st.markdown("<h1 style='text-align: center; color: red;'>Covid19 Dashboard - Kenya</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: white;'>Covid19 Dashboard - Kenya</h1>", unsafe_allow_html=True)
 
 page_bg_img = '''
 <style>
@@ -294,9 +294,9 @@ col4, col5 = st.beta_columns(2)
 with col4:
     st.markdown("<h2 style='text-align: center; color: green;'>Positivity rate</h2>", unsafe_allow_html=True)
     fig = px.line(data2, x='Date', y='rate',hover_data={'Date': False})
-    fig.layout.update(hovermode='x', yaxis=dict(title='Rate', titlefont=dict(size=18), tickformat= ',.2%',
+    fig.layout.update(hovermode='x', yaxis=dict(title='Rate', titlefont=dict(size=18), color = '#E90', tickformat= ',.2%',
                                                 visible=True, showgrid=False),
-                      xaxis=dict(title='Date', titlefont=dict(size=18), showline=True, showgrid=False),
+                      xaxis=dict(title='Date', titlefont=dict(size=18), color = '#E90', showline=True, showgrid=False),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16,
                                                                                                    bgcolor='white',
                                                                                                    font_family='Rockwell'))
@@ -309,7 +309,7 @@ with col5:
     fig = px.line(KE_data, x='Date', y =['cases','recoveries','deaths'],
                   hover_data={'value':':,.0f','Date': False},
                   color_discrete_map={'cases': '#0000FF',
-                                      'recoveries': '#00FF00',
+                                      'recoveries': '#008000',
                                       'deaths':'#8B0000'})
     fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), tickformat=',.0f',
                                                         visible=True, showgrid=False),
