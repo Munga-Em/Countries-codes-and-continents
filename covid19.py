@@ -20,7 +20,7 @@ import calendar
 
 
 st.beta_set_page_config(page_title='Covid19 - Kenya',
-                        page_icon= Image.open('images.jpg'), layout='wide', initial_sidebar_state='auto')
+                        layout='wide', initial_sidebar_state='auto')
 
 
 # In[3]:
