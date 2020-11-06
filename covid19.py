@@ -20,7 +20,7 @@ import calendar
 
 
 st.set_page_config(page_title='Covid19 - Kenya',
-                        layout='centered', initial_sidebar_state='auto')
+                        layout='wide', initial_sidebar_state='auto')
 
 
 # In[3]:
@@ -260,7 +260,7 @@ with col1:
         plt.grid(False)
         plt.gca().patch.set_facecolor('0.0')
         fig.patch.set_alpha(0.0)
-        st.pyplot(fig)
+        st.pyplot(fig, use_container_width=True)
     
     
 with col2:
