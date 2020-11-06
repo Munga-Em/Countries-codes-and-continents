@@ -402,6 +402,7 @@ with col10:
     fig.update_layout(yaxis={'categoryorder':'total descending'},  paper_bgcolor='rgba(0,0,0,0)',
                       plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=18, bgcolor='white', font_family='Rockwell'))
     fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 2000
+    fig.update_layout(legend_title_text='')
     st.plotly_chart(fig)
     
 with col11:
@@ -424,6 +425,7 @@ with col11:
                       plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16, bgcolor='white', font_family='Rockwell'))
     fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
     fig.update_traces(hovertemplate=None)
+    fig.layout.coloraxis.colorbar.Tickfont(color=white, size=14)
     st.plotly_chart(fig)
 
 
