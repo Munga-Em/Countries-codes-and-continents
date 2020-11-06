@@ -20,7 +20,7 @@ import calendar
 
 
 st.set_page_config(page_title='Covid19 - Kenya',
-                        layout='wide', initial_sidebar_state='auto')
+                        layout='centered', initial_sidebar_state='auto')
 
 
 # In[3]:
@@ -339,6 +339,7 @@ with col6:
                                                                                                    font_family='Rockwell'),
                      legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(family="Courier", size=18, color='white')))
     fig.update_traces(hovertemplate=None)
+    fig.update_layout(legend_title_text='')
     st.plotly_chart(fig)
     
 with col7:
@@ -365,6 +366,7 @@ with col8:
                                                                                                    font_family='Rockwell'),
                      legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(family="Courier", size=18, color='white')))
     fig.update_traces(hovertemplate=None)
+    fig.update_layout(legend_title_text='')
     st.plotly_chart(fig)
     
 with col9:
@@ -379,6 +381,7 @@ with col9:
                                                                                                    font_family='Rockwell'),
                       legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(family="Courier", size=18, color='white')))
     fig.update_traces(hovertemplate=None)
+    fig.update_layout(legend_title_text='')
     st.plotly_chart(fig)
 
 
@@ -389,11 +392,12 @@ col10, col11 = st.beta_columns(2)
 with col10:
     st.markdown("<h2 style='text-align: center; color: white;'>Positive cases per county over time</h2>",
                 unsafe_allow_html=True)
-    st.text('Showing top 10 counties only')
+    st.markdown("<p style='text-align: left; color: white;'>Showing top 10 counties only</p>",
+                unsafe_allow_html=True)
     fig = px.bar(data5, x='total_cases', y='County', orientation='h', hover_name= None, color='County', hover_data = {'month': False, 'period': data5['Month_yr']},
                  animation_frame='month', animation_group='County', range_x=[0,data5.total_cases.max()])
-    fig.layout.update(yaxis=dict(titlefont=dict(size=14),color = '#FFFFFF', showgrid=False),
-                      xaxis=dict(titlefont=dict(size=14), tickformat=',.0f', color = '#FFFFFF', showline=True, showgrid=False),
+    fig.layout.update(yaxis=dict(titlefont=dict(size=14),color = '#FFFFFF', visible=True, showgrid=False),
+                      xaxis=dict(titlefont=dict(size=14), tickformat=',.0f', color = '#FFFFFF', showline=False, showgrid=False),
                      legend=dict(font=dict(family="Courier", size=14, color='white')))
     fig.update_layout(yaxis={'categoryorder':'total descending'},  paper_bgcolor='rgba(0,0,0,0)',
                       plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=18, bgcolor='white', font_family='Rockwell'))
