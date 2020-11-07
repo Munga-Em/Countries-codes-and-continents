@@ -398,7 +398,7 @@ with col10:
                 unsafe_allow_html=True)
     fig = px.bar(data5, x='total_cases', y='County', orientation='h', hover_name= None, color='County', hover_data = {'month': False, 'period': data5['Month_yr']},
                  animation_frame='month', animation_group='County', range_x=[0,data5.total_cases.max()])
-    fig.layout.update(yaxis=dict(titlefont=dict(size=14),color = '#FFFFFF', visible=False, showgrid=False),
+    fig.layout.update(yaxis=dict(titlefont=dict(size=14),color = '#FFFFFF', visible=True, showgrid=False),
                       xaxis=dict(titlefont=dict(size=14), tickformat=',.0f', color = '#FFFFFF', showline=False, showgrid=False),
                      legend=dict(font=dict(family="Courier", size=14, color='white')))
     fig.update_layout(yaxis={'categoryorder':'total descending'},  paper_bgcolor='rgba(0,0,0,0)',
@@ -449,8 +449,9 @@ fig.update_geos(showcoastlines=True, coastlinecolor="RebeccaPurple", showcountri
                 showland=True,showocean=True, oceancolor="LightBlue", showlakes=True, lakecolor="Blue")
 fig.layout.update(yaxis=dict(titlefont=dict(size=18), color = '#FFFFFF', showgrid=False),
                   xaxis=dict(titlefont=dict(size=18), color = '#FFFFFF', showgrid=False))
-fig.update_layout(height=600, width =900, coloraxis_colorbar_x=-0.05, paper_bgcolor='rgba(0,0,0,0)',
-                  plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16, bgcolor='white', font_family='Rockwell'))
+fig.update_layout(height=600, width =900, coloraxis_colorbar_x=-0.01, paper_bgcolor='rgba(0,0,0,0)',
+                  plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16, bgcolor='white', font_family='Rockwell'),
+                 coloraxis_colorbar=dict(title='', tickfont=dict(size=14, color='white')))
 fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
 fig.update_traces(hovertemplate=None)
 st.plotly_chart(fig, config=config, use_container_width=True)
