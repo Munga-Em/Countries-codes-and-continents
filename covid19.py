@@ -272,7 +272,7 @@ with col2:
     trace = dict(hoverinfo='skip')
     fig.layout.update(showlegend=False, font=dict(size=18, color='white'), paper_bgcolor='rgba(0,0,0,0)',
                                                    plot_bgcolor='rgba(0,0,0,0)')
-    st.plotly_chart(fig, config = config)   
+    st.plotly_chart(fig, config = config, use_container_width=True)   
     
 with col3:
     fig = go.Figure(data=[go.Pie(values=fatality_values, hole=.9, hoverinfo='skip')])
