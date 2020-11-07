@@ -346,7 +346,7 @@ with col6:
     
 with col7:
     
-    st.image('https://images.squarespace-cdn.com/content/v1/5a5baed98dd041eb3ccb3b54/1587154921968-9AMAU6PK1GBTUMK4G9J1/ke17ZwdGBToddI8pDm48kOMRtONU7S1qv5qBL4yMXihZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIh8syG9K-XlBOeDXbnxME-_Pv-Us1_JucYSxo44gphNUKMshLAGzx4R3EDFOm1kBS/signs+and+symptomes+graphic+small.jpg', use_container_width=True)
+    st.image('https://images.squarespace-cdn.com/content/v1/5a5baed98dd041eb3ccb3b54/1587154921968-9AMAU6PK1GBTUMK4G9J1/ke17ZwdGBToddI8pDm48kOMRtONU7S1qv5qBL4yMXihZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIh8syG9K-XlBOeDXbnxME-_Pv-Us1_JucYSxo44gphNUKMshLAGzx4R3EDFOm1kBS/signs+and+symptomes+graphic+small.jpg', width = 600)
 
 
 # In[17]:
