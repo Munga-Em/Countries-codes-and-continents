@@ -283,7 +283,7 @@ with col3:
     trace = dict(hoverinfo='skip')
     fig.layout.update(showlegend=False, font=dict(size=18, color='white'), paper_bgcolor='rgba(0,0,0,0)',
                                                   plot_bgcolor='rgba(0,0,0,0)')
-    st.plotly_chart(fig, config=config)
+    st.plotly_chart(fig, config=config, use_container_width=True)
 
 
 # In[15]:
@@ -293,6 +293,7 @@ col4, col5 = st.beta_columns(2)
     
 with col4:
     st.markdown("<h2 style='text-align: center; color: white;'>Positivity rate</h2>", unsafe_allow_html=True)
+    config = {'displayModeBar': False}
     fig = px.line(data2, x='Date', y='rate',hover_data={'Date': False})
     fig.layout.update(hovermode='x', yaxis=dict(title='Rate', titlefont=dict(size=18), color = '#FFFFFF', tickformat= ',.2%',
                                                 visible=True, showgrid=False),
@@ -301,11 +302,12 @@ with col4:
                                                                                                    bgcolor='white',
                                                                                                    font_family='Rockwell'))
     fig.update_traces(hovertemplate=None)
-    st.plotly_chart(fig)
+    st.plotly_chart(fig, config=config, use_container_width=True)
     
 with col5:
     st.markdown("<h2 style='text-align: left; color: white;'>Daily confirmed cases, recoveries and fatalities</h2>",
                 unsafe_allow_html=True)
+    config = {'displayModeBar': False}
     fig = px.line(KE_data, x='Date', y =['cases','recoveries','deaths'],
                   hover_data={'value':':,.0f','Date': False},
                   color_discrete_map={'cases': '#0000FF',
@@ -320,7 +322,7 @@ with col5:
                      legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(family="Courier", size=18, color='white')))
     fig.update_layout(legend_title_text='')
     fig.update_traces(hovertemplate=None)
-    st.plotly_chart(fig)
+    st.plotly_chart(fig, config=config, use_container_width=True)
 
 
 # In[16]:
@@ -340,7 +342,7 @@ with col6:
                      legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(family="Courier", size=18, color='white')))
     fig.update_traces(hovertemplate=None)
     fig.update_layout(legend_title_text='')
-    st.plotly_chart(fig)
+    st.plotly_chart(fig, config=config, use_container_width=True)
     
 with col7:
     
@@ -367,7 +369,7 @@ with col8:
                      legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(family="Courier", size=18, color='white')))
     fig.update_traces(hovertemplate=None)
     fig.update_layout(legend_title_text='')
-    st.plotly_chart(fig)
+    st.plotly_chart(fig, config=config, use_container_width=True)
     
 with col9:
     st.markdown("<h2 style='text-align: center; color: white;'>Total cases by gender</h2>",
@@ -382,7 +384,7 @@ with col9:
                       legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(family="Courier", size=18, color='white')))
     fig.update_traces(hovertemplate=None)
     fig.update_layout(legend_title_text='')
-    st.plotly_chart(fig)
+    st.plotly_chart(fig, config=config, use_container_width=True)
 
 
 # In[18]:
@@ -403,7 +405,7 @@ with col10:
                       plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=18, bgcolor='white', font_family='Rockwell'))
     fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 2000
     fig.update_layout(legend_title_text='')
-    st.plotly_chart(fig)
+    st.plotly_chart(fig, config=config, use_container_width=True)
     
 with col11:
     st.markdown("<h2 style='text-align: center; color: white;'>Active cases over time - Africa</h2>",
@@ -425,7 +427,7 @@ with col11:
                       plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16, bgcolor='white', font_family='Rockwell'))
     fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
     fig.update_traces(hovertemplate=None)
-    st.plotly_chart(fig)
+    st.plotly_chart(fig, config=config, use_container_width=True)
 
 
 # In[19]:
@@ -450,5 +452,5 @@ fig.update_layout(height=600, width =900, coloraxis_colorbar_x=-0.15, paper_bgco
                   plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16, bgcolor='white', font_family='Rockwell'))
 fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
 fig.update_traces(hovertemplate=None)
-st.plotly_chart(fig)
+st.plotly_chart(fig, config=config, use_container_width=True)
 
