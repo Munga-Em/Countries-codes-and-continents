@@ -346,7 +346,7 @@ with col6:
     
 with col7:
     
-    st.image('https://images.squarespace-cdn.com/content/v1/5a5baed98dd041eb3ccb3b54/1587154921968-9AMAU6PK1GBTUMK4G9J1/ke17ZwdGBToddI8pDm48kOMRtONU7S1qv5qBL4yMXihZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIh8syG9K-XlBOeDXbnxME-_Pv-Us1_JucYSxo44gphNUKMshLAGzx4R3EDFOm1kBS/signs+and+symptomes+graphic+small.jpg', width=600)
+    st.image('https://images.squarespace-cdn.com/content/v1/5a5baed98dd041eb3ccb3b54/1587154921968-9AMAU6PK1GBTUMK4G9J1/ke17ZwdGBToddI8pDm48kOMRtONU7S1qv5qBL4yMXihZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIh8syG9K-XlBOeDXbnxME-_Pv-Us1_JucYSxo44gphNUKMshLAGzx4R3EDFOm1kBS/signs+and+symptomes+graphic+small.jpg', use_container_width=True)
 
 
 # In[17]:
@@ -422,7 +422,7 @@ with col11:
                     showland=True,showocean=True, oceancolor="LightBlue", showlakes=True, lakecolor="Blue")
     fig.layout.update(yaxis=dict(titlefont=dict(size=18), color = '#E90', showgrid=False),
                       xaxis=dict(titlefont=dict(size=18), color = '#E90', showgrid=False))
-    fig.update_layout(hovermode='x unified', height=800, width =1000, coloraxis_colorbar_x=-0,
+    fig.update_layout(hovermode='x unified', height=800, width =1000, coloraxis_colorbar_x=-0.05,
                       paper_bgcolor='rgba(0,0,0,0)',
                       plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16, bgcolor='white', font_family='Rockwell'))
     fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
@@ -448,7 +448,7 @@ fig.update_geos(showcoastlines=True, coastlinecolor="RebeccaPurple", showcountri
                 showland=True,showocean=True, oceancolor="LightBlue", showlakes=True, lakecolor="Blue")
 fig.layout.update(yaxis=dict(titlefont=dict(size=18), color = '#E90', showgrid=False),
                   xaxis=dict(titlefont=dict(size=18), color = '#E90', showgrid=False))
-fig.update_layout(height=600, width =900, coloraxis_colorbar_x=-0.15, paper_bgcolor='rgba(0,0,0,0)',
+fig.update_layout(height=600, width =900, coloraxis_colorbar_x=-0.05, paper_bgcolor='rgba(0,0,0,0)',
                   plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16, bgcolor='white', font_family='Rockwell'))
 fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
 fig.update_traces(hovertemplate=None)
