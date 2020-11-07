@@ -420,9 +420,9 @@ with col11:
                         scope='africa', center=None, width=900, height=600)
     fig.update_geos(showcoastlines=True, coastlinecolor="RebeccaPurple", showcountries = True,
                     showland=True,showocean=True, oceancolor="LightBlue", showlakes=True, lakecolor="Blue")
-    fig.layout.update(yaxis=dict(titlefont=dict(size=18), color = '#E90', showgrid=False),
-                      xaxis=dict(titlefont=dict(size=18), color = '#E90', showgrid=False))
-    fig.update_layout(hovermode='x unified', height=800, width =1000, coloraxis_colorbar_x=-0.05,
+    fig.layout.update(yaxis=dict(titlefont=dict(size=18), color = '#FFFFFF', showgrid=False),
+                      xaxis=dict(titlefont=dict(size=18), color = '#FFFFFF', showgrid=False))
+    fig.update_layout(hovermode='x unified', height=800, width =1000, coloraxis_colorbar_x=-0.15,
                       paper_bgcolor='rgba(0,0,0,0)',
                       plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16, bgcolor='white', font_family='Rockwell'))
     fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
@@ -446,8 +446,8 @@ fig = px.choropleth(world_cases,locations='Country', locationmode='country names
                     center=None, width=900, height=600)
 fig.update_geos(showcoastlines=True, coastlinecolor="RebeccaPurple", showcountries = True,
                 showland=True,showocean=True, oceancolor="LightBlue", showlakes=True, lakecolor="Blue")
-fig.layout.update(yaxis=dict(titlefont=dict(size=18), color = '#E90', showgrid=False),
-                  xaxis=dict(titlefont=dict(size=18), color = '#E90', showgrid=False))
+fig.layout.update(yaxis=dict(titlefont=dict(size=18), color = '#FFFFFF', showgrid=False),
+                  xaxis=dict(titlefont=dict(size=18), color = '#FFFFFF', showgrid=False))
 fig.update_layout(height=600, width =900, coloraxis_colorbar_x=-0.05, paper_bgcolor='rgba(0,0,0,0)',
                   plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16, bgcolor='white', font_family='Rockwell'))
 fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
