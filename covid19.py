@@ -399,7 +399,8 @@ with col10:
     fig = px.bar(data5, x='total_cases', y='County', orientation='h', hover_name= None, color='County', hover_data = {'month': False, 'period': data5['Month_yr']},
                  animation_frame='month', animation_group='County', range_x=[0,data5.total_cases.max()])
     fig.layout.update(yaxis=dict(titlefont=dict(size=14),color = '#FFFFFF', showgrid=False),
-                      xaxis=dict(titlefont=dict(size=14), tickformat=',.0f', color = '#FFFFFF', showline=False, showgrid=False),
+                      xaxis=dict(titlefont=dict(size=14), tickformat=',.0f', color = '#FFFFFF', autorange=False, 
+                                 range=[0, data5['total_cases'].max()], showline=False, showgrid=False),
                      legend=dict(font=dict(family="Courier", size=14, color='white')))
     fig.update_layout(yaxis={'categoryorder':'total descending'},  paper_bgcolor='rgba(0,0,0,0)',
                       plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=18, bgcolor='white', font_family='Rockwell'))
