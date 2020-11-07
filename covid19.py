@@ -402,7 +402,7 @@ with col10:
                  animation_frame='month', animation_group='County', range_x=[0,county_max])
     fig.layout.update(yaxis=dict(titlefont=dict(size=14),color = '#FFFFFF', zeroline=False, showgrid=False),
                       xaxis=dict(titlefont=dict(size=14), tickformat=',.0f', color = '#FFFFFF', autorange=False, 
-                                 range=[0, county_max], showline=False, showgrid=False),
+                                 range=[0, county_max], showline=False, zeroline=False, showgrid=False),
                      legend=dict(font=dict(family="Courier", size=14, color='white')))
     fig.update_layout(yaxis={'categoryorder':'total descending'},  paper_bgcolor='rgba(0,0,0,0)',
                       plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=18, bgcolor='white', font_family='Rockwell'))
