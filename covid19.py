@@ -451,7 +451,7 @@ fig.update_geos(showcoastlines=True, coastlinecolor="RebeccaPurple", showcountri
                 showland=True,showocean=True, oceancolor="LightBlue", showlakes=True, lakecolor="Blue")
 fig.layout.update(yaxis=dict(titlefont=dict(size=18), color = '#FFFFFF', showgrid=False),
                   xaxis=dict(titlefont=dict(size=18), color = '#FFFFFF', showgrid=False))
-fig.update_layout(height=600, width =900, coloraxis_colorbar_x=-0.01, paper_bgcolor='rgba(0,0,0,0)',
+fig.update_layout(height=600, width =900, coloraxis_colorbar_x=-0, paper_bgcolor='rgba(0,0,0,0)',
                   plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16, bgcolor='white', font_family='Rockwell'),
                  coloraxis_colorbar=dict(title='', tickfont=dict(size=14, color='white')))
 fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
