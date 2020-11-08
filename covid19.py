@@ -19,7 +19,7 @@ import calendar
 # In[2]:
 
 
-st.set_page_config(page_title='Covid19 - Kenya', initial_sidebar_state='auto')
+st.set_page_config(page_title='Covid19 - Kenya', layout='wide', initial_sidebar_state='auto')
 
 
 # In[3]:
@@ -399,7 +399,7 @@ with col10:
                 unsafe_allow_html=True)
     fig = px.bar(data5, x='total_cases', y='County', orientation='h', hover_name= None, color='County', hover_data = {'month': False, 'period': data5['Month_yr']},
                  animation_frame='month', animation_group='County', range_x=[0,county_max], range_y=[0,9])
-    fig.layout.update(yaxis=dict(titlefont=dict(size=14),color = '#FFFFFF', zeroline=False, showgrid=False),
+    fig.layout.update(yaxis=dict(titlefont=dict(size=14),color = '#FFFFFF', zeroline=False, autorange=False, showgrid=False),
                       xaxis=dict(titlefont=dict(size=14), tickformat=',.0f', color = '#FFFFFF', autorange=False, 
                                  range=[0, county_max], showline=False, zeroline=False, showgrid=False),
                      legend=dict(font=dict(family="Courier", size=14, color='white')))
