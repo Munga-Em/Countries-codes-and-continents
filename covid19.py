@@ -406,7 +406,7 @@ with col10:
     fig.update_layout(yaxis={'categoryorder':'total descending'},  paper_bgcolor='rgba(0,0,0,0)',
                       plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=18, bgcolor='white', font_family='Rockwell'))
     fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 2000
-    fig.layout.updatemenus[0].buttons = (dict(method='animate'))    
+    fig.layout.updatemenus[0].buttons[0].method = 'animate'    
     fig.layout.updatemenus[0].font = (dict(color='white'))
     fig.update_layout(legend_title_text='')
     st.plotly_chart(fig, config=config, use_container_width=True)
