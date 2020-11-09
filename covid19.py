@@ -463,7 +463,7 @@ fig.update_layout(height=600, width =900, coloraxis_colorbar_x=-0, paper_bgcolor
 fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
 fig.layout.updatemenus[0].font = (dict(color='white'))
 fig.layout.sliders[0].currentvalue =(dict(prefix='Month:')) 
-    fig.layout.sliders[0].font =(dict(color='white'))
+fig.layout.sliders[0].font =(dict(color='white'))
 fig.update_traces(hovertemplate=None)
 st.plotly_chart(fig, config=config, use_container_width=True)
 
