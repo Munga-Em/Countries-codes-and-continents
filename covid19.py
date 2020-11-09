@@ -246,13 +246,13 @@ with col1:
     with _lock:
         fig, axs = plt.subplots(nrows=2, ncols=2, sharex=True, sharey=True)
         axs[0,0].text(0.5,0.5, '{:,.0f}'.format(data['Sample size'].sum()), fontsize=30, weight='bold', ha='center', color='gray')
-        axs[0,0].text(0.5,0.3, 'tests done', fontsize=18, ha='center')
+        axs[0,0].text(0.5,0.3, 'tests done', fontsize=18, ha='center', color='white')
         axs[1,0].text(0.5,0.5, '{:,.0f}'.format(casesKE.iloc[-1, 2]), fontsize=30, weight='black', ha='center', color='orange')
-        axs[1,0].text(0.5,0.3, ' positive cases', fontsize=18, ha='center')
+        axs[1,0].text(0.5,0.3, ' positive cases', fontsize=18, ha='center', color='white')
         axs[0,1].text(0.5,0.5, '{:,.0f}'.format(recKE.iloc[-1, 2]), fontsize=30, weight='heavy', ha='center', color='green')
-        axs[0,1].text(0.5,0.3, ' recoveries', fontsize=18, ha='center')
+        axs[0,1].text(0.5,0.3, ' recoveries', fontsize=18, ha='center', color='white')
         axs[1,1].text(0.5,0.5, '{:,.0f}'.format(deathsKE.iloc[-1, 2]), fontsize=30, weight='extra bold', ha='center', color='red')
-        axs[1,1].text(0.5,0.3, ' deaths', fontsize=18, ha='center')
+        axs[1,1].text(0.5,0.3, ' deaths', fontsize=18, ha='center', color='white')
         for i in range(2):
             for j in range(2):
                 axs[i, j].axis('off')
