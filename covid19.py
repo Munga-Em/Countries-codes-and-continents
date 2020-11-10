@@ -232,7 +232,7 @@ data5 = data5.groupby(['month','County', 'Month_yr'], as_index=False)['new cases
 data5['total_cases'] = data5.groupby('County')['new cases'].transform('cumsum')
 data5 = data5.sort_values(by=['month', 'total_cases'], ascending=[True, False]).groupby('month').head(10)
 data5['total_cases'] = data5['total_cases'].astype(int)
-county_max = round(data5.total_cases.max(), -3)
+county_max = round(data5.total_cases.max(), -4)
 
 
 # In[14]:
