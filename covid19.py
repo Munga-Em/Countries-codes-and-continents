@@ -59,7 +59,7 @@ data_load_state.text('Loading data...done!')
 
 # In[5]:
 
-
+data = data.fillna(0)
 cats = ['Jan', 'Feb', 'Mar', 'Apr','May','Jun', 'Jul', 'Aug','Sep', 'Oct', 'Nov', 'Dec']
 #Cases, scope - Kenya
 casesKE = worldwide[worldwide['Country/Region']=='Kenya']
