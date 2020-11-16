@@ -298,7 +298,7 @@ with col4:
     fig = px.line(data2, x='Date', y='rate',hover_data={'Date': False})
     fig.layout.update(hovermode='x', yaxis=dict(title='Rate', titlefont=dict(size=18), color = '#FFFFFF', tickformat= ',.2%',
                                                 visible=True, showgrid=False),
-                      xaxis=dict(title='Date', titlefont=dict(size=18), color = '#FFFFFF', showline=True, showgrid=False),
+                      xaxis=dict(title='Date', titlefont=dict(size=18), color = '#FFFFFF', showline=False, showgrid=False),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16,
                                                                                                    bgcolor='white',
                                                                                                    font_family='Rockwell'))
