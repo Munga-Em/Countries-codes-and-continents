@@ -442,29 +442,28 @@ with col11:
 
 # In[19]:
 
-
-st.markdown("<h2 style='text-align: left; color: white;'>Worldwide active cases over time</h2>",
-            unsafe_allow_html=True)
-
-fig = px.choropleth(world_cases,locations='Country', locationmode='country names', color='Active cases',
-                    animation_frame='month', hover_name='Country', hover_data = {'Active cases':':,.0f',
-                                                                                 'Country':False,
-                                                                                 'month':False,
-                                                                                 'period': worldwide_cases['Month_yr']},
-                    animation_group='Active cases', color_continuous_scale='reds',
-                    range_color=[0,max_cases], color_continuous_midpoint=mid_point, scope='world',
-                    center=None, width=900, height=600)
-fig.update_geos(showcoastlines=True, coastlinecolor="RebeccaPurple", showcountries = True,
-                showland=True,showocean=True, oceancolor="LightBlue", showlakes=True, lakecolor="Blue")
-fig.layout.update(yaxis=dict(titlefont=dict(size=18), color = '#FFFFFF', showgrid=False),
-                  xaxis=dict(titlefont=dict(size=18), color = '#FFFFFF', showgrid=False))
-fig.update_layout(height=600, width =900, coloraxis_colorbar_x=-0, paper_bgcolor='rgba(0,0,0,0)',
-                  plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16, bgcolor='white', font_family='Rockwell'),
-                 coloraxis_colorbar=dict(title='', tickfont=dict(size=14, color='white')))
-fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
-fig.layout.updatemenus[0].font = (dict(color='white'))
-fig.layout.sliders[0].currentvalue =(dict(prefix='Month:')) 
-fig.layout.sliders[0].font =(dict(color='white'))
-fig.update_traces(hovertemplate=None)
-st.plotly_chart(fig, config=config, use_container_width=True)
+if st.checkbox('Show Worldwide active cases over time'):
+    st.markdown("<h2 style='text-align: left; color: white;'>Worldwide active cases over time</h2>",
+                unsafe_allow_html=True)
+    fig = px.choropleth(world_cases,locations='Country', locationmode='country names', color='Active cases',
+                        animation_frame='month', hover_name='Country', hover_data = {'Active cases':':,.0f',
+                                                                                     'Country':False,
+                                                                                     'month':False,
+                                                                                     'period': worldwide_cases['Month_yr']},
+                        animation_group='Active cases', color_continuous_scale='reds',
+                        range_color=[0,max_cases], color_continuous_midpoint=mid_point, scope='world',
+                        center=None, width=900, height=600)
+    fig.update_geos(showcoastlines=True, coastlinecolor="RebeccaPurple", showcountries = True,
+                    showland=True,showocean=True, oceancolor="LightBlue", showlakes=True, lakecolor="Blue")
+    fig.layout.update(yaxis=dict(titlefont=dict(size=18), color = '#FFFFFF', showgrid=False),
+                     xaxis=dict(titlefont=dict(size=18), color = '#FFFFFF', showgrid=False))
+    fig.update_layout(height=600, width =900, coloraxis_colorbar_x=-0, paper_bgcolor='rgba(0,0,0,0)',
+                    plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16, bgcolor='white', font_family='Rockwell'),
+                    coloraxis_colorbar=dict(title='', tickfont=dict(size=14, color='white')))
+    fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
+    fig.layout.updatemenus[0].font = (dict(color='white'))
+    fig.layout.sliders[0].currentvalue =(dict(prefix='Month:')) 
+    fig.layout.sliders[0].font =(dict(color='white'))
+    fig.update_traces(hovertemplate=None)
+    st.plotly_chart(fig, config=config, use_container_width=True)
 
