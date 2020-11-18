@@ -133,6 +133,8 @@ gender.index = pd.CategoricalIndex(gender.index, categories=cats, ordered=True)
 gender = gender.sort_index()
 gender = gender.reset_index()
 
+recs1 = data.iloc[:-1, [0,5]]
+KE_data = KE_data.merge(recs1)
 
 # In[6]:
 
@@ -324,7 +326,6 @@ with col5:
     fig.update_layout(legend_title_text='')
     fig.update_traces(hovertemplate=None)
     st.plotly_chart(fig, config=config, use_container_width=True)
-
 
 # In[16]:
 
