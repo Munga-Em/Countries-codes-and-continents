@@ -311,10 +311,10 @@ with col5:
     st.markdown("<h2 style='text-align: left; color: white;'>Daily confirmed cases, recoveries and fatalities</h2>",
                 unsafe_allow_html=True)
     config = {'displayModeBar': False}
-    fig = px.line(KE_data, x='Date', y =['cases','recoveries','deaths'],
-                  hover_data={'value':':,.0f','Date': False},
+    fig = px.line(KE_data, x='Date', y =['cases','Recoveries','deaths'],
+                  hover_data={'Date': False},
                   color_discrete_map={'cases': '#0000FF',
-                                      'recoveries': '#008000',
+                                      'Recoveries': '#008000',
                                       'deaths':'#8B0000'})
     fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#FFFFFF', tickformat=',.0f',
                                                         visible=True, showgrid=False),
