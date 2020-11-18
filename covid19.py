@@ -317,7 +317,7 @@ with col5:
                                       'Recoveries': '#008000',
                                       'deaths':'#8B0000'})
     fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#FFFFFF', tickformat=',.0f',
-                                                        visible=True, showgrid=False),
+                                                        visible=True, showgrid=False, dtick=500),
                       xaxis=dict(title='Date', titlefont=dict(size=18), color = '#FFFFFF', showline=False, showgrid=False),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16,
                                                                                                    bgcolor='white',
