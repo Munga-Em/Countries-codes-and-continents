@@ -411,6 +411,7 @@ with col10:
     fig.layout.sliders[0].font =(dict(color='white')) 
     fig.layout.updatemenus[0].font = (dict(color='white'))
     fig.update_layout(legend_title_text='')
+    fig.update_yaxes(type='category')
     st.plotly_chart(fig, config=config, use_container_width=True)
     
 with col11:
