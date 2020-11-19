@@ -407,6 +407,7 @@ with col10:
     fig.update_layout(yaxis={'categoryorder':'total descending'},  paper_bgcolor='rgba(0,0,0,0)',
                       plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=18, bgcolor='white', font_family='Rockwell'))
     fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 2000
+    fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["redraw"] = False
     fig.layout.sliders[0].currentvalue =(dict(prefix='Month:')) 
     fig.layout.sliders[0].font =(dict(color='white')) 
     fig.layout.updatemenus[0].font = (dict(color='white'))
