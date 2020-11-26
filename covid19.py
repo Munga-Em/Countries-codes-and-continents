@@ -133,7 +133,7 @@ gender.index = pd.CategoricalIndex(gender.index, categories=cats, ordered=True)
 gender = gender.sort_index()
 gender = gender.reset_index()
 
-recs1 = data.iloc[:-1, [0,5]]
+recs1 = data.iloc[:, [0,5]]
 KE_data = KE_data.merge(recs1)
 
 # In[6]:
