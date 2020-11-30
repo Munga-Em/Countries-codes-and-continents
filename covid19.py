@@ -445,9 +445,9 @@ with col9:
               'hovermode' :'x',
               'updatemenus' :[
                   {'buttons' : [
-                      {"args": [None, {"frame": {"duration": 500, "redraw": True},
+                      {"args": [None, {"frame": {"duration": 2000, "redraw": True},
                                        "fromcurrent": True,
-                                       "transition": {"duration": 200, "easing": "quadratic-in-out"}}],
+                                       "transition": {"duration": 2000, "easing": "quadratic-in-out"}}],
                        "label": "Play",
                        "method": "animate"
                       },
@@ -501,9 +501,9 @@ with col9:
         
         frames.append(frame)
         slider_step = {"args": [[month],
-                                {"frame": {"duration": 200, "redraw": False},
+                                {"frame": {"duration": 2000, "redraw": False},
                                  "mode": "immediate",
-                                 "transition": {"duration": 200}}
+                                 "transition": {"duration": 2000}}
                                ],
                        "label": str(month),
                        "method": "animate"}
