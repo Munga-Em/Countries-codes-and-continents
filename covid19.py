@@ -529,7 +529,7 @@ with col9:
     fig.update_layout(showlegend=False)
 
 
-    st.plotly_chart(fig, use_column_width=True)
+    st.plotly_chart(fig, config = config, use_column_width=True)
     
 with col10:
     st.markdown("<h2 style='text-align: center; color: white;'>Active cases over time - Africa</h2>",
