@@ -14,7 +14,6 @@ from plotly.subplots import make_subplots
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import RendererAgg
 _lock = RendererAgg.lock
-from skimage import io
 import calendar
 import math
 
