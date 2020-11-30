@@ -387,7 +387,7 @@ with col7:
                                                         visible=True, showgrid=False),
                       xaxis=dict(title='Month-2020', titlefont=dict(size=18), color = '#FFFFFF', showline=False, showgrid=False),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16,
-                                                                                                   bgcolor='white',
+                                                                                                   bgcolor='gray',
                                                                                                    font_family='Rockwell'),
                      legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(family="Courier", size=18, color='white')))
     fig.update_traces(hovertemplate=None)
