@@ -451,7 +451,7 @@ with col9:
                        "label": "Play",
                        "method": "animate"
                       },
-                      {"args": [[None], {"frame": {"duration": 0, "redraw": False},
+                      {"args": [[None], {"frame": {"duration": 0, "redraw": True},
                                          "mode": "immediate",
                                          "transition": {"duration": 0}}],
                        "label": "Pause",
@@ -526,7 +526,6 @@ with col9:
     fig.layout.sliders[0].currentvalue =(dict(prefix='Month:')) 
     fig.layout.sliders[0].font =(dict(color='white'))
     fig.update_traces(hovertemplate=None)
-    fig.update_layout(showlegend=False)
 
     st.plotly_chart(fig, use_column_width=True)
     
