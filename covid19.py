@@ -445,13 +445,13 @@ with col9:
               'hovermode' :'x',
               'updatemenus' :[
                   {'buttons' : [
-                      {"args": [None, {"frame": {"duration": 2000, "redraw": True},
+                      {"args": [None, {"frame": {"duration": 2000, "redraw": False},
                                        "fromcurrent": True,
                                        "transition": {"duration": 2000, "easing": "cubic-in-out"}}],
                        "label": "Play",
                        "method": "animate"
                       },
-                      {"args": [[None], {"frame": {"duration": 0, "redraw": True},
+                      {"args": [[None], {"frame": {"duration": 0, "redraw": False},
                                          "mode": "immediate",
                                          "transition": {"duration": 0}}],
                        "label": "Pause",
