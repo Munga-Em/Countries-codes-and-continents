@@ -445,7 +445,7 @@ with col9:
               'hovermode' :'x',
               'updatemenus' :[
                   {'buttons' : [
-                      {"args": [None, {"frame": {"duration": 2000, "redraw": True},
+                      {"args": [None, {"frame": {"duration": 2000, "redraw": False},
                                        "fromcurrent": True,
                                        "transition": {"duration": 2000, "easing": "cubic-in-out"}}],
                        "label": "Play",
@@ -526,6 +526,8 @@ with col9:
     fig.layout.sliders[0].currentvalue =(dict(prefix='Month:')) 
     fig.layout.sliders[0].font =(dict(color='white'))
     fig.update_traces(hovertemplate=None)
+    fig.update_layout(showlegend=False)
+
 
     st.plotly_chart(fig, use_column_width=True)
     
