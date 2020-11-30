@@ -447,7 +447,7 @@ with col9:
                   {'buttons' : [
                       {"args": [None, {"frame": {"duration": 2000, "redraw": True},
                                        "fromcurrent": True,
-                                       "transition": {"duration": 2000, "easing": "quadratic-in-out"}}],
+                                       "transition": {"duration": 2000, "easing": "cubic-in-out"}}],
                        "label": "Play",
                        "method": "animate"
                       },
