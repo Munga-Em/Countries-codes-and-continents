@@ -496,6 +496,7 @@ with col9:
                 "y": list(data_by_month_county['total_cases']),
                 "mode": 'lines',
                 "text": list(data_by_month_county['County']),
+                'names': county
             }
             frame["data"].append(data_dict)
         
