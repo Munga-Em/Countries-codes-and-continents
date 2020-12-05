@@ -4,4 +4,4 @@ Key items in this dashboard:
 - Recovery and death rates
 - Positivity rate
 - Various charts showing different aspects of the virus spread in Kenya, including Africa and world maps
-- App link https://share.streamlit.io/munga-em/covid19-dashboard-kenya/main/covid19.py
+- App link https://share.streamlit.io/munga-em/covid19-dashboard-kenya/main/covid19.py or click 'Open in Streamlit' above
