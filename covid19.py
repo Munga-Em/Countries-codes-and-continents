@@ -445,7 +445,7 @@ with col9:
               'hovermode' :'x',
               'updatemenus' :[
                   {'buttons' : [
-                      {"args": [None, {"frame": {"duration": 2000, "redraw": False},
+                      {"args": [None, {"frame": {"duration": 2000, "redraw": True},
                                        "fromcurrent": True,
                                        "transition": {"duration": 2000, "easing": "cubic-in-out"}}],
                        "label": "Play",
