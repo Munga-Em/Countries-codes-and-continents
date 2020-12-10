@@ -451,7 +451,7 @@ with col9:
                        "label": "Play",
                        "method": "animate"
                       },
-                      {"args": [[None], {"frame": {"duration": 0, "redraw": False},
+                      {"args": [[None], {"frame": {"duration": 0, "redraw": True},
                                          "mode": "immediate",
                                          "transition": {"duration": 0}}],
                        "label": "Pause",
