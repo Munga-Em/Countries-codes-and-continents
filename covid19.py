@@ -526,7 +526,6 @@ with col9:
     fig.layout.sliders[0].currentvalue =(dict(prefix='Month:')) 
     fig.layout.sliders[0].font =(dict(color='white'))
     fig.update_traces(hovertemplate=None)
-    fig.update_layout(showlegend=False)
 
 
     st.plotly_chart(fig, config = config, use_column_width=True)
