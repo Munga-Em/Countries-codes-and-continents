@@ -451,7 +451,7 @@ with col9:
                        "label": "Play",
                        "method": "animate"
                       },
-                      {"args": [[None], {"frame": {"duration": 0, "redraw": True},
+                      {"args": [[None], {"frame": {"duration": 0, "redraw": False},
                                          "mode": "immediate",
                                          "transition": {"duration": 0}}],
                        "label": "Pause",
@@ -501,7 +501,7 @@ with col9:
         
         frames.append(frame)
         slider_step = {"args": [[month],
-                                {"frame": {"duration": 2000, "redraw": False},
+                                {"frame": {"duration": 2000, "redraw": True},
                                  "mode": "immediate",
                                  "transition": {"duration": 2000}}
                                ],
