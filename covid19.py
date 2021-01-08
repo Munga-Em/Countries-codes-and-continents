@@ -152,6 +152,7 @@ gender = data.iloc[:,[0,3,4]]
 gender = gender.fillna(0).reset_index()
 gender['month1'] = gender['Date'].dt.month
 gender['month'] = gender['month1'].apply(lambda x: calendar.month_abbr[x])
+gender['Month_yr'] = gender['Date'].dt.strftime('%b-%Y')
 gender = pd.pivot_table(gender, values=['Male','Female'], index='month',aggfunc=sum)
 gender.index = pd.CategoricalIndex(gender.index, categories=cats, ordered=True)
 gender = gender.sort_index()
