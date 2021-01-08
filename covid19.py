@@ -354,7 +354,7 @@ col5, col6 = st.beta_columns(2)
 with col5:
     st.markdown("<h2 style='text-align: center; color: white;'>Monthly positive cases by gender</h2>",
                 unsafe_allow_html=True)
-    fig = px.bar(gender, x ='month', y = ['Male','Female'], hover_data={'month': False, 'value':':,.0f'}, height = 600)
+    fig = px.bar(gender, x ='Month_yr', y = ['Male','Female'], hover_data={'month': False, 'value':':,.0f'}, height = 600)
     fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#FFFFFF', tickformat=',.0f',
                                                 visible=True, showgrid=False),
                       xaxis=dict(title='Month', titlefont=dict(size=18), color = '#FFFFFF', showline=True, showgrid=False),
@@ -535,7 +535,7 @@ with col10:
                 unsafe_allow_html=True)
 
     fig = px.choropleth(Africa_cases,locations='Country', locationmode='country names',
-                        color='Active cases', animation_frame='month', hover_name='Country',
+                        color='Active cases', animation_frame='Month_yr', hover_name='Country',
                         hover_data = {'Active cases':':,.0f','Country': False,
                                       'month': False, 'period': Africa_cases['Month_yr']},
                         animation_group='Active cases', color_continuous_scale='reds',
@@ -564,7 +564,7 @@ st.markdown("<p style='text-align: left; color: white;'>View world map of active
                 unsafe_allow_html=True)
 if st.checkbox('Show map'):
     fig = px.choropleth(world_cases,locations='Country', locationmode='country names', color='Active cases',
-                        animation_frame='month', hover_name='Country', hover_data = {'Active cases':':,.0f',
+                        animation_frame='Month_yr', hover_name='Country', hover_data = {'Active cases':':,.0f',
                                                                                      'Country':False,
                                                                                      'month':False,
                                                                                      'period': worldwide_cases['Month_yr']},
