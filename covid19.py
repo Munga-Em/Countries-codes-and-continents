@@ -376,10 +376,10 @@ col7, col8 = st.beta_columns(2)
 with col7:
     st.markdown("<h2 style='text-align: center; color: white;'>Total cases, recoveries and fatalities</h2>",
                 unsafe_allow_html=True)
-    fig = px.line(KE_monthly, x='month',y = ['Total cases','Total recoveries','Total deaths'],
-                  hover_data={'value':':,.0f','month': False}, color_discrete_map={'Total cases': '#0000FF',
-                                                                                   'Total recoveries': '#008000',
-                                                                                   'Total deaths':'#8B0000'},
+    fig = px.line(KE_monthly, x='Month_yr',y = ['Total cases','Total recoveries','Total deaths'],
+                  hover_data={'value':':,.0f'}, color_discrete_map={'Total cases': '#0000FF',
+                                                                    'Total recoveries': '#008000',
+                                                                    'Total deaths':'#8B0000'},
                  height = 600)
     fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#FFFFFF', tickformat=',.0f',
                                                         visible=True, showgrid=False),
