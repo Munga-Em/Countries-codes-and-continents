@@ -353,7 +353,7 @@ col5, col6 = st.beta_columns(2)
 with col5:
     st.markdown("<h2 style='text-align: center; color: white;'>Monthly positive cases by gender</h2>",
                 unsafe_allow_html=True)
-    fig = px.bar(gender, x ='month', y = ['Male','Female'], hover_data={'month': False, 'value':':,.0f'}, height = 600)
+    fig = px.bar(gender, x =gender.index, y = ['Male','Female'], hover_data={'month': False, 'value':':,.0f'}, height = 600)
     fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#FFFFFF', tickformat=',.0f',
                                                 visible=True, showgrid=False),
                       xaxis=dict(title='Month', titlefont=dict(size=18), color = '#FFFFFF', showline=True, showgrid=False),
