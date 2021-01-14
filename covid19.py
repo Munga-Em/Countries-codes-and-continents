@@ -423,7 +423,7 @@ with col9:
     y_axis_data = []
 
     for county in data7:
-        x_axis = county['month'].to_list()
+        x_axis = county['Month_yr'].to_list()
         y_axis = county['total_cases'].to_list()
         x_axis_data.append(x_axis)
         y_axis_data.append(y_axis)
@@ -434,7 +434,7 @@ with col9:
     
     
 
-    layout = {'xaxis' :{'range': [3, x_axis_data[0][-1]], "title": "Month", "titlefont": {'size': 18},
+    layout = {'xaxis' :{'range': [x_axis_data[0][0], x_axis_data[0][-1]], "title": "Month-Yr", "titlefont": {'size': 18},
                         'showline': True, 'showgrid': False, 'color': '#FFFFFF'},
               'yaxis' :{'range': [0, math.ceil((data5['total_cases'].max()/1000))*1000], "title": "Positive cases",
                        "titlefont": {'size': 18}, 'color': '#FFFFFF',
