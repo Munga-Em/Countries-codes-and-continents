@@ -423,7 +423,7 @@ with col9:
     y_axis_data = []
 
     for county in data7:
-        x_axis = county['Month_yr'].to_list()
+        x_axis = county['month'].to_list()
         y_axis = county['total_cases'].to_list()
         x_axis_data.append(x_axis)
         y_axis_data.append(y_axis)
