@@ -136,16 +136,15 @@ data.columns = data.columns.str.strip()
 data2 = pd.DataFrame(data.iloc[:,:7])
 data2 = data2.fillna(0)
 data2['month1'] = data2['Date'].dt.month
+data2['Month_yr'] = data2['Date'].dt.strftime('%b-%Y')
 data2['month'] = data2['month1'].apply(lambda x: calendar.month_abbr[x])
 data2['rate'] = data2['Positive cases']/data2['Sample size']
 
 #Cumulative cases by gender
 data3 = data2.drop(['Date','rate','month1'], axis=1).fillna(0)
-data3 = data3.groupby(['month']).sum()
-data3.index = pd.CategoricalIndex(data3.index, categories=cats, ordered=True)
-data3 = data3.sort_index()
+data3 = data3.groupby(['Month_yr']).sum()
+data3 = data3.reindex(cats, axis=0)
 data3 = data3.cumsum(axis=0)
-data3 = data3.reset_index()
 
 #Monthly cases by gender
 gender = data.iloc[:,[0,3,4]]
@@ -383,7 +382,7 @@ with col7:
                  height = 600)
     fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#FFFFFF', tickformat=',.0f',
                                                         visible=True, showgrid=False),
-                      xaxis=dict(title='Month-2020', titlefont=dict(size=18), color = '#FFFFFF', showline=False, showgrid=False),
+                      xaxis=dict(title='Month-Yr', titlefont=dict(size=18), color = '#FFFFFF', showline=False, showgrid=False),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16,
                                                                                                    bgcolor='white',
                                                                                                    font_family='Rockwell'),
@@ -395,10 +394,10 @@ with col7:
 with col8:
     st.markdown("<h2 style='text-align: center; color: white;'>Total cases by gender</h2>",
                 unsafe_allow_html=True)
-    fig = px.line(data3, x='month', y = ['Male','Female'], hover_data = {'month': False}, height = 600)
+    fig = px.line(data3, x=data3.index, y = ['Male','Female'], height = 600)
     fig.layout.update(hovermode='x', yaxis=dict(title='Count', titlefont=dict(size=18), color = '#FFFFFF', tickformat=',.0f',
                                                         visible=True, showgrid=False),
-                      xaxis=dict(title='Month-2020', titlefont=dict(size=18), color = '#FFFFFF', showline=False, showgrid=False),
+                      xaxis=dict(title='Month-Yr', titlefont=dict(size=18), color = '#FFFFFF', showline=False, showgrid=False),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16,
                                                                                                    bgcolor='white',
                                                                                                    font_family='Rockwell'),
