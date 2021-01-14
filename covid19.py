@@ -127,9 +127,8 @@ KE_data = KE_data.merge(recs1)
 #Kenya figures aggregated by sum, monthly
 KE_data1 = KE_data.set_index('Date')
 KE_monthly = KE_data1.resample('M').ffill().reset_index()
-KE_monthly['month'] = KE_monthly['Date'].dt.month
-KE_monthly['month'] = KE_monthly['month'].apply(lambda x: calendar.month_abbr[x])
-KE_monthly['month'] = pd.Categorical(KE_monthly['month'], categories=cats, ordered=True)
+KE_monthly['Month_yr'] = KE_monthly['Date'].dt.strftime('%b-%Y')
+KE_monthly['Month_yr'] = pd.Categorical(KE_monthly['Month_yr'], categories=cats, ordered=True)
 
 #Positivity rate
 data['Date'] = pd.to_datetime(data['Date'])
