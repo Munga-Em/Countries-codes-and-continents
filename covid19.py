@@ -448,7 +448,7 @@ with col10:
                                                                                      'period': worldwide_cases['Month_yr']},
                         animation_group='Active cases', color_continuous_scale='reds',
                         range_color=[0,max_cases], color_continuous_midpoint=mid_point, scope='world',
-                        center=None)
+                        center=None,   width=800, height=1000)
         fig.update_geos(fitbounds="locations", visible = False, showcoastlines=True, coastlinecolor="RebeccaPurple", showcountries = True,
                     showland=True,showocean=True, oceancolor="LightBlue", showlakes=True, lakecolor="Blue")
         fig.layout.update(yaxis=dict(titlefont=dict(size=18), color = '#FFFFFF', showgrid=False),
