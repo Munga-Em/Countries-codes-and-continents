@@ -441,8 +441,8 @@ with col9:
 with col10:
         st.markdown("<p style='text-align: left; color: white;'>View world map of active cases over time</p>",
                 unsafe_allow_html=True)
-if st.checkbox('Show map'):
-    fig = px.choropleth(world_cases,locations='Country', locationmode='country names', color='Active cases',
+        if st.checkbox('Show map'):
+        fig = px.choropleth(world_cases,locations='Country', locationmode='country names', color='Active cases',
                         animation_frame='Month_yr', hover_name='Country', hover_data = {'Active cases':':,.0f',
                                                                                      'Country':False,
                                                                                      'month':False,
@@ -450,19 +450,19 @@ if st.checkbox('Show map'):
                         animation_group='Active cases', color_continuous_scale='reds',
                         range_color=[0,max_cases], color_continuous_midpoint=mid_point, scope='world',
                         center=None,  width=1000, height=800)
-    fig.update_geos(fitbounds="locations", visible = False, showcoastlines=True, coastlinecolor="RebeccaPurple", showcountries = True,
+        fig.update_geos(fitbounds="locations", visible = False, showcoastlines=True, coastlinecolor="RebeccaPurple", showcountries = True,
                     showland=True,showocean=True, oceancolor="LightBlue", showlakes=True, lakecolor="Blue")
-    fig.layout.update(yaxis=dict(titlefont=dict(size=18), color = '#FFFFFF', showgrid=False),
+        fig.layout.update(yaxis=dict(titlefont=dict(size=18), color = '#FFFFFF', showgrid=False),
                      xaxis=dict(titlefont=dict(size=18), color = '#FFFFFF', showgrid=False))
-    fig.update_layout(height=600, width =900, coloraxis_colorbar_x=-0, paper_bgcolor='rgba(0,0,0,0)',
+        fig.update_layout(height=600, width =900, coloraxis_colorbar_x=-0, paper_bgcolor='rgba(0,0,0,0)',
                     plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16, bgcolor='white', font_family='Rockwell'),
                     coloraxis_colorbar=dict(title='', tickfont=dict(size=14, color='white')))
-    fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
-    fig.layout.updatemenus[0].font = (dict(color='white'))
-    fig.layout.sliders[0].currentvalue =(dict(prefix='Month:')) 
-    fig.layout.sliders[0].font =(dict(color='white'))
-    fig.update_traces(hovertemplate=None)
-    st.plotly_chart(fig, config=config, use_container_width=True)
+        fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
+        fig.layout.updatemenus[0].font = (dict(color='white'))
+        fig.layout.sliders[0].currentvalue =(dict(prefix='Month:')) 
+        fig.layout.sliders[0].font =(dict(color='white'))
+        fig.update_traces(hovertemplate=None)
+        st.plotly_chart(fig, config=config, use_container_width=True)
     
 
 
