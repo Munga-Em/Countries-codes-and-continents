@@ -413,122 +413,7 @@ with col8:
 col9, col10 = st.beta_columns(2)
 
 with col9:
-    st.markdown("<h2 style='text-align: center; color: white;'>Positive cases per county over time</h2>",
-                unsafe_allow_html=True)
-    st.markdown("<p style='text-align: left; color: white;'>Showing top 10 counties only</p>",
-                unsafe_allow_html=True)
-    
-    data = []
-    x_axis_data = []
-    y_axis_data = []
-
-    for county in data7:
-        x_axis = county['month'].to_list()
-        y_axis = county['total_cases'].to_list()
-        x_axis_data.append(x_axis)
-        y_axis_data.append(y_axis)
-
-
-    for i, j in zip(x_axis_data, y_axis_data):
-        data.append(go.Scatter(x=np.array([1]), y=np.array(y_axis_data[0]), mode='lines'))
-    
-    
-
-    layout = {'xaxis' :{'range': [x_axis_data[0][0], x_axis_data[0][-1]], "title": "Month-Yr", "titlefont": {'size': 18},
-                        'showline': True, 'showgrid': False, 'color': '#FFFFFF'},
-              'yaxis' :{'range': [0, math.ceil((data5['total_cases'].max()/1000))*1000], "title": "Positive cases",
-                       "titlefont": {'size': 18}, 'color': '#FFFFFF',
-                        'tickformat': ',.0f', 'visible': True, 'showgrid': False},
-              'hovermode' :'x',
-              'updatemenus' :[
-                  {'buttons' : [
-                      {"args": [None, {"frame": {"duration": 2000, "redraw": True},
-                                       "fromcurrent": True,
-                                       "transition": {"duration": 2000, "easing": "cubic-in-out"}}],
-                       "label": "Play",
-                       "method": "animate"
-                      },
-                      {"args": [[None], {"frame": {"duration": 0, "redraw": False},
-                                         "mode": "immediate",
-                                         "transition": {"duration": 0}}],
-                       "label": "Pause",
-                       "method": "animate"
-                      }
-                  ],
-                   "direction": "left",
-                   "pad": {"r": 10, "t": 87},
-                   "showactive": False,
-                   "type": "buttons",
-                   "x": 0.1,
-                   "xanchor": "right",
-                   "y": 0,
-                   "yanchor": "top"}
-              ]
-             }
-
-    sliders = {"active": 0,
-               "yanchor": "top",
-               "xanchor": "left",
-               "currentvalue": {"font": {"size": 20},
-                                "prefix": "month:",
-                                "visible": True,
-                                "xanchor": "right"},
-               "transition": {"duration": 200, "easing": "cubic-in-out"},
-               "pad": {"b": 10, "t": 50},
-               "len": 0.9,
-               "x": 0.1,
-               "y": 0,
-               "steps": []
-              }
-
-    frames = []
-
-    for month in data8['month'].unique():
-        frame = {"data": [], "name": str(month)}
-        for county in data8['County'].unique():
-            data_by_month = data8[data8['month'] <= int(month)]
-            data_by_month_county = data_by_month[data_by_month['County'] == county]
-            data_dict = {
-                "x": list(data_by_month_county['month']),
-                "y": list(data_by_month_county['total_cases']),
-                "mode": 'lines',
-                "name": county
-            }
-            frame["data"].append(data_dict)
-        
-        frames.append(frame)
-        slider_step = {"args": [[month],
-                                {"frame": {"duration": 2000, "redraw": True},
-                                 "mode": "immediate",
-                                 "transition": {"duration": 2000}}
-                               ],
-                       "label": str(month),
-                       "method": "animate"}
-        sliders["steps"].append(slider_step)
-
-
-    layout['sliders'] = [sliders]
-    
-    fig = go.Figure(
-        data = data,
-        layout =layout,
-        frames = frames
-    )
-
-    fig.layout.update(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
-                      hoverlabel=dict(font_size=16, font_family='Rockwell'),
-                     legend=dict(font=dict(family="Courier", size=14, color='white')),
-                      autosize=False, width=800, height=500)
-    fig.layout.updatemenus[0].font = (dict(color='white'))
-    fig.layout.sliders[0].currentvalue =(dict(prefix='Month:')) 
-    fig.layout.sliders[0].font =(dict(color='white'))
-    fig.update_traces(hovertemplate=None)
-
-
-    st.plotly_chart(fig, config = config, use_column_width=True)
-    
-with col10:
-    st.markdown("<h2 style='text-align: center; color: white;'>Active cases over time - Africa</h2>",
+        st.markdown("<h2 style='text-align: center; color: white;'>Active cases over time - Africa</h2>",
                 unsafe_allow_html=True)
 
     fig = px.choropleth(Africa_cases,locations='Country', locationmode='country names',
@@ -552,12 +437,10 @@ with col10:
     fig.layout.sliders[0].font =(dict(color='white'))
     fig.update_traces(hovertemplate=None)
     st.plotly_chart(fig, config=config, use_container_width=True)
-
-
-# In[22]:
-
-
-st.markdown("<p style='text-align: left; color: white;'>View world map of active cases over time</p>",
+    
+    
+with col10:
+        st.markdown("<p style='text-align: left; color: white;'>View world map of active cases over time</p>",
                 unsafe_allow_html=True)
 if st.checkbox('Show map'):
     fig = px.choropleth(world_cases,locations='Country', locationmode='country names', color='Active cases',
@@ -581,4 +464,11 @@ if st.checkbox('Show map'):
     fig.layout.sliders[0].font =(dict(color='white'))
     fig.update_traces(hovertemplate=None)
     st.plotly_chart(fig, config=config, use_container_width=True)
+    
+
+
+# In[22]:
+
+
+
 
