@@ -441,7 +441,6 @@ with col9:
 with col10:
         st.markdown("<p style='text-align: left; color: white;'>View world map of active cases over time</p>",
                 unsafe_allow_html=True)
-        if st.checkbox('Show map'):
         fig = px.choropleth(world_cases,locations='Country', locationmode='country names', color='Active cases',
                         animation_frame='Month_yr', hover_name='Country', hover_data = {'Active cases':':,.0f',
                                                                                      'Country':False,
