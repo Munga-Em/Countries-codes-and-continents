@@ -439,7 +439,7 @@ with col9:
     
     
 with col10:
-        st.markdown("<p style='text-align: left; color: white;'>View world map of active cases over time</p>",
+        st.markdown("<h2 style='text-align: left; color: white;'>World map of active cases over time</h2>",
                 unsafe_allow_html=True)
         fig = px.choropleth(world_cases,locations='Country', locationmode='country names', color='Active cases',
                         animation_frame='Month_yr', hover_name='Country', hover_data = {'Active cases':':,.0f',
@@ -453,7 +453,7 @@ with col10:
                     showland=True,showocean=True, oceancolor="LightBlue", showlakes=True, lakecolor="Blue")
         fig.layout.update(yaxis=dict(titlefont=dict(size=18), color = '#FFFFFF', showgrid=False),
                      xaxis=dict(titlefont=dict(size=18), color = '#FFFFFF', showgrid=False))
-        fig.update_layout(height=600, width =900, coloraxis_colorbar_x=-0, paper_bgcolor='rgba(0,0,0,0)',
+        fig.update_layout(height=800, width =1000, coloraxis_colorbar_x=-0.2, paper_bgcolor='rgba(0,0,0,0)',
                     plot_bgcolor='rgba(0,0,0,0)', hoverlabel=dict(font_size=16, bgcolor='white', font_family='Rockwell'),
                     coloraxis_colorbar=dict(title='', tickfont=dict(size=14, color='white')))
         fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 1000
@@ -463,10 +463,6 @@ with col10:
         fig.update_traces(hovertemplate=None)
         st.plotly_chart(fig, config=config, use_container_width=True)
     
-
-
-# In[22]:
-
 
 
 
