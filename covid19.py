@@ -43,7 +43,7 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 # In[4]:
 
 
-data_load_state = st.text('Loading data...Last update Jan 2021')
+data_load_state = st.text('Loading data...Last KE data update 2021')
 
 cases_url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv'
 recoveries_url ='https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv'
@@ -64,7 +64,7 @@ data_load_state.text('Loading data...done!')
 
 #list of months for sorting data where necessary
 cats = ['Jan-2020', 'Feb-2020', 'Mar-2020', 'Apr-2020','May-2020','Jun-2020', 'Jul-2020', 'Aug-2020','Sep-2020', 'Oct-2020', 'Nov-2020', 'Dec-2020',
-        'Jan-2021']
+        'Jan-2021', 'Feb-2021', 'Mar-2021', 'Apr-2021']
 
 #fill missing values in Kenya dataframe
 data = data.fillna(0)
@@ -85,7 +85,7 @@ deathsKE = deathsKE.stack().reset_index()
 
 #Kenya recovery and fatality rates
 fatalityperc = deathsKE.iloc[-1, 2]/casesKE.iloc[-1, 2]
-recoveryperc = recKE.iloc[-1, 2]/casesKE.iloc[-1, 2]
+recoveryperc = recKE.iloc[-1, 2]/recKE.iloc[-1, 2]
 
 #Values for plotting donut charts on fatality and recovery   
 fatality_values =[deathsKE.iloc[-1, 2], casesKE.iloc[-1, 2]-deathsKE.iloc[-1, 2]]  
