@@ -89,7 +89,7 @@ recoveryperc = recKE.iloc[-1, 2]/recKE.iloc[-1, 2]
 
 #Values for plotting donut charts on fatality and recovery   
 fatality_values =[deathsKE.iloc[-1, 2], casesKE.iloc[-1, 2]-deathsKE.iloc[-1, 2]]  
-recovery_values =[recKE.iloc[-1, 2], casesKE.iloc[-1, 2]-recKE.iloc[-1, 2]]
+recovery_values =[recKE.iloc[-1, 2], casesKE.iloc[-1, 2]-casesKE.iloc[-1, 2]]
 
 
 # In[6]:
