@@ -43,7 +43,7 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 # In[4]:
 
 
-data_load_state = st.text('Loading data...')
+data_load_state = st.text('Loading data...Last update Jan 2021')
 
 cases_url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv'
 recoveries_url ='https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv'
